@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>TweetApp</title>
+<title>Mahjong Stats</title>
 <%= csrf_meta_tags %>
 
 <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -11,20 +11,26 @@
 <body>
 <header>
 <div class="header-logo">
-<%= link_to("TweetApp", "/") %>
+<%= link_to("Mahjong Stats", "/") %>
 </div>
 <ul class="header-menus">
+
+<!--
 <li>
-<%= link_to("Mahjong Statsとは", "/about") %>
+<%= link_to("MahjongStatsとは", "/about") %>
+</li>
+-->
+<li>
+<%= link_to("成績入力", "/input") %>
 </li>
 <li>
-<%= link_to("成績入力", "/about") %>
-</li>
-<li>
-<%= link_to("成績分析", "/about") %>
+<%= link_to("成績分析", "/analysis") %>
 </li>
 <li>
 <%= link_to("新規登録", "/signup") %>
+</li>
+<li>
+<%= link_to("ログイン", "/signin") %>
 </li>
 </ul>
 </header>
