@@ -18,13 +18,14 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
   def update
-    @user = User.find_by(:id params[:id])
+    @user = User.find_by(id: params[:id])
     @user.name = params[:name]
     @user.email = params[:email]
     if @user.save
-      redirect_to
+      redirect_to("/users/#{@user.id}")
+      flash[:notice] = "ユーザー情報を編集しました"
     else
-      render()
+      render("/users/edit")
     end
   end
 end
