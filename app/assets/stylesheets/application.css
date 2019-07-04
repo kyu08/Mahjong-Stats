@@ -1,3 +1,22 @@
+/* スマホ用 */
+@media(max-width: 670px){
+    .menu-icon {
+        color: white;
+        float: right;
+        font-size: 25px;
+        padding: 21px 0;
+        /* displayをnoneに指定してください */
+        display:none;
+      }
+    .header-logo {
+        float: left;
+        padding-left: 20px;
+        color: white;
+        font-size: 22px;
+        line-height: 64px;
+        }
+}
+
 /* reset ================================ */
 * {
     box-sizing: border-box;
@@ -70,35 +89,36 @@
     }
     
     .header-logo {
-    float: center;
+    float: left;
     padding-left: 20px;
-    color: white;
+    color: black;
     font-size: 22px;
     line-height: 64px;
     }
     
     .header-logo a{
-    color: white;
+    color: black;
     font-size: 22px;
     }
     
     .header-menus {
-    float: right;
+    float: black;
     padding-right: 20px;
+
     }
     
     .header-menus li {
-    float: left;
+    float: right;
     line-height: 64px;
     font-size: 13px;
-    color: white;
+    color: black;
     padding-left: 15px;
     }
     
     .header-menus a {
     float: left;
     font-size: 13px;
-    color: white;
+    color: black
     }
     
     .header-menus .fa {
@@ -114,9 +134,12 @@
     font-size: 13px;
     }
 
-    .btn{
+    .menu-icon {
+        color: black;
         float: right;
-        }
+        font-size: 25px;
+        display:block;
+      }
     
     /* top ================================ */
     .top-main {

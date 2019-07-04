@@ -1,8 +1,13 @@
-/* PC用 */
-@media(min-width: 1000px){
-    .menu-icon{
-        display: none;
-    }
+/* スマホ用 */
+@media(max-width: 670px){
+    .menu-icon {
+        color: white;
+        float: right;
+        font-size: 25px;
+        padding: 21px 0;
+        /* displayをnoneに指定してください */
+        display:none;
+      }
     .header-logo {
         float: left;
         padding-left: 20px;
@@ -10,10 +15,6 @@
         font-size: 22px;
         line-height: 64px;
         }
-}
-/* タブレット用　*/
-@media(min-width: 670px){
-    
 }
 
 /*

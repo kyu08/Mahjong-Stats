@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Mahjong Stats</title>
-<%= csrf_meta_tags %>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/assets/stylesheets/application.css">
-<link rel="stylesheet" href="/assets/stylesheets/responsive.css">
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-</head>
+    <head>
+    <title>Mahjong Stats</title>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-<body>
-<header>
-    <div class="header-logo">
-     <%= link_to("Mahjong Stats", "/") %>
-    </div>
-<ul class="header-menus">
+    <body>
+        <header>
+            <div class="header-logo">
+                <a href="/">Mahjong Stats</a>
+            </div>
+            <ul class="header-menus">
+            
+                <!--
+                <li>
+                <a href="/about">MahjongStatsとは</a>
+                </li>
+                -->
+                <li>
+                <a href="/input">成績入力</a>
+                </li>
+                <li>
+                <a href="/analysis">成績分析</a>
+                </li>
+                <li>
+                <a href="/signup">新規登録</a>
+                </li>
+                <li>
+                <a href="/signin">ログイン</a>
+                </li>
+            </ul>
+        </header>
 
+        <% if flash[:notice] %>
+        <div class="flash">
+        <%= flash[:notice] %>
+        </div>
+        <% end %>
 
-<li>
-<%= link_to("MahjongStatsとは", "/about") %>
-</li>
-<li>
-<%= link_to("成績入力", "/input") %>
-</li>
-<li>
-<%= link_to("成績分析", "/analysis") %>
-</li>
-<li>
-<%= link_to("新規登録", "/signup") %>
-</li>
-<li>
-<%= link_to("ログイン", "/signin") %>
-</li>
-</ul>
-<span class="fa fa-bars menu-icon"></span>
-</header>
-
-<% if flash[:notice] %>
-<div class="flash">
-<%= flash[:notice] %>
-</div>
-<% end %>
-
-<%= yield %>
-</body>
+        <%= yield %>
+    </body>
 </html>
