@@ -70,7 +70,7 @@
     }
     
     .header-logo {
-    float: left;
+    float: center;
     padding-left: 20px;
     color: white;
     font-size: 22px;
@@ -113,6 +113,10 @@
     margin: 0;
     font-size: 13px;
     }
+
+    .btn{
+        float: right;
+        }
     
     /* top ================================ */
     .top-main {

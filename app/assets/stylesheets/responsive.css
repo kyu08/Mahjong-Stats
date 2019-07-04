@@ -1,8 +1,15 @@
 /* PC用 */
 @media(min-width: 1000px){
     .menu-icon{
-display: none;
+        display: none;
     }
+    .header-logo {
+        float: left;
+        padding-left: 20px;
+        color: white;
+        font-size: 22px;
+        line-height: 64px;
+        }
 }
 /* タブレット用　*/
 @media(min-width: 670px){
