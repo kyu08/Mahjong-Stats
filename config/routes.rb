@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+    get "login" => "users#login_form"
+    post "login" => "users#login"
+    get "logout" => "users#logout"
     get 'signup' => "users#new"
     get "analysis" => "analysis#analysis"
     get "input" => "input#input"
@@ -6,7 +10,8 @@ Rails.application.routes.draw do
     get "users/:id/edit" => "users#edit"
     post "users/create" => "users#create"
     get "users/:id" => "users#show"
-    get "signin" => "users#login"
+    get "date/input" => "round#input"
+
     
     get "/" => "home#top"
     get "about" => "home#about"

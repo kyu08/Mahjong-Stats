@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  point: 1
+  meld: 1
+  riichi: 1
+  rank: 1
+
+two:
+  user_id: 1
+  point: 1
+  meld: 1
+  riichi: 1
+  rank: 1

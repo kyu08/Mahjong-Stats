@@ -1,0 +1,24 @@
+<div class="main users-new">
+  <div class="container">
+    <div class="form-heading">成績入力</div>
+    <div class="form users-form">
+      <div class="form-body">
+        <%= form_tag("/date/create") do %>
+            <input type="radio" name="point" value="0">なし
+            <input type="radio" name="point" value="1">和了
+            <input type="radio" name="point" value="2">放銃
+
+            <input type="radio" name="action" value="0">なし
+            <input type="radio" name="action" value="1">副露した
+            <input type="radio" name="action" value="2">立直した
+
+            <input type="radio" name="rank" value="1">1位
+            <input type="radio" name="rank" value="2">2位
+            <input type="radio" name="rank" value="3">3位
+            <input type="radio" name="rank" value="4">4位
+          <input type="submit" value="送信">
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

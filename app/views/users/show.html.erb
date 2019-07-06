@@ -3,7 +3,9 @@
     <div class="user">
       <h2><%= @user.name %></h2>
       <p><%= @user.email %></p>
-       <%= link_to("編集", "/users/#{@user.id}/edit") %> 
+      <% if @current_user.id == @user.id %>
+        <%= link_to("編集", "/users/#{@user.id}/edit") %> 
+      <% end %>
     </div>
   </div>
 </div>
