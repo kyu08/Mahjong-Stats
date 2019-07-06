@@ -20,10 +20,10 @@
                 <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
                 </li>            
                 <li>
-                <%= link_to("成績入力","")%>
+                <%= link_to("成績入力","/date/input")%>
                 </li>
                 <li>
-                <%= link_to("成績分析","")%>
+                <%= link_to("成績分析","/date/analysis")%>
                 </li>
                 <li>
                 <%= link_to("ログアウト","/logout")%>
@@ -33,7 +33,7 @@
                 <%= link_to("Mahjong Statsとは","")%>
                 </li>
                 <li>
-                <%= link_to("新規登録","signup")%>
+                <%= link_to("新規登録","/signup")%>
                 </li>
                 <li>
                 <%= link_to("ログイン","/login")%>

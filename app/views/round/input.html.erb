@@ -4,18 +4,36 @@
     <div class="form users-form">
       <div class="form-body">
         <%= form_tag("/date/create") do %>
-            <input type="radio" name="point" value="0">なし
-            <input type="radio" name="point" value="1">和了
-            <input type="radio" name="point" value="2">放銃
-
-            <input type="radio" name="action" value="0">なし
-            <input type="radio" name="action" value="1">副露した
-            <input type="radio" name="action" value="2">立直した
-
-            <input type="radio" name="rank" value="1">1位
-            <input type="radio" name="rank" value="2">2位
-            <input type="radio" name="rank" value="3">3位
-            <input type="radio" name="rank" value="4">4位
+            <div class="point">
+                <p>点数増減</p>
+                <input type="radio" name="point" class="point-input" id="ponit-01" value="0">
+                <label for="point-01">増減なし</label>
+                <input type="radio" name="point" class="point-input" id="ponit-02" value="1">
+                <label for="point-02">和了</label>
+                <input type="radio" name="point" class="point-input" id="ponit-03" value="2">
+                <label for="point-03">放銃</label>
+                <input name="point_number">点
+            </div>
+            <div class="action">
+                <p>副露・立直有無</p>
+                <input type="radio" name="action" class="action-input" id="action-01" value="0">
+                <label for="action-01">副露・立直ともになし</label>
+                <input type="radio" name="action" class="action-input" id="action-02" value="1">
+                <label for="action-02">副露した</label>
+                <input type="radio" name="action" class="action-input" id="action-03" value="2">
+                <label for="action-03">立直した</label>
+            </div>
+            <div class="rank">
+                <p>順位(半荘終了時のみ選択)</p>
+                <input type="radio" name="rank" class="rank-input" id="rank-01" value="1">
+                <label for="rank-01">1位</label>
+                <input type="radio" name="rank" class="rank-input" id="rank-02" value="2">
+                <label for="rank-02">2位</label>
+                <input type="radio" name="rank" class="rank-input" id="rank-03" value="3">
+                <label for="rank-03">3位</label>
+                <input type="radio" name="rank" class="rank-input" id="rank-04" value="4">
+                <label for="rank-04">4位</label>
+            </div>
           <input type="submit" value="送信">
         <% end %>
       </div>

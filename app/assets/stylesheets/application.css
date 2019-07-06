@@ -267,8 +267,13 @@
     font-size: 14px;
     }
     
-
-
+    /* ラジオボタン ================================ */
+    .point-input {
+    display: inline-block;
+    }
+    .action-input {
+      display: inline;
+      }
 
 
 
