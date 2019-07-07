@@ -267,13 +267,17 @@
     font-size: 14px;
     }
     
-    /* ラジオボタン ================================ */
+    /* date/input ================================ */
     .point-input {
     display: inline-block;
     }
     .action-input {
       display: inline;
-      }
+    }
+    .input-title{
+      text-decoration: underline;
+      font-weight: bold;
+    }
 
 
 

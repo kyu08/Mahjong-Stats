@@ -5,7 +5,7 @@
       <div class="form-body">
         <%= form_tag("/date/create") do %>
             <div class="point">
-                <p>点数増減</p>
+                <p class="input-title">点数増減</p>
                 <input type="radio" name="point" class="point-input" id="ponit-01" value="0">
                 <label for="point-01">増減なし</label>
                 <input type="radio" name="point" class="point-input" id="ponit-02" value="1">
@@ -15,7 +15,7 @@
                 <input name="point_number">点
             </div>
             <div class="action">
-                <p>副露・立直有無</p>
+                <p class="input-title">副露・立直有無</p>
                 <input type="radio" name="action" class="action-input" id="action-01" value="0">
                 <label for="action-01">副露・立直ともになし</label>
                 <input type="radio" name="action" class="action-input" id="action-02" value="1">
@@ -24,7 +24,7 @@
                 <label for="action-03">立直した</label>
             </div>
             <div class="rank">
-                <p>順位(半荘終了時のみ選択)</p>
+                <p class="input-title">順位(半荘終了時のみ選択)</p>
                 <input type="radio" name="rank" class="rank-input" id="rank-01" value="1">
                 <label for="rank-01">1位</label>
                 <input type="radio" name="rank" class="rank-input" id="rank-02" value="2">
