@@ -28,36 +28,40 @@ class RoundController < ApplicationController
 
     def analysis
         @round=Round.find_by(user_id: @current_user.id)
-        winning_times=@round.where("point>?",1).count
-        ducking_times=@round.where("point<?",-1).count
-        total_rounds=@round.count
-        total_winning_point=@round.where("point>?",1).sum("point")
-        total_ducking_point=@round.where("point<?",-1).sum("point")
-        melding_times=@round.where("meld==?",1).count
-        riichi_times=@round.where("riichi==?",1).count
-        meld_and_win_times=@round.where("meld==1 and point>1").count
-        riichi_and_win_times=@round.where("riichi==1 and point>1").count
-        meld_and_duck_times=@round.where("meld==1 and point<-1").count
-        riichi_and_duck_times=@round.where("riichi==1 and point<-1").count
-        ranks=@round.where("rank>1")
-        total_rank=ranks.sum("rank")
-        total_rank
+        winning_times=@round.class.where("point>?",1).count
+        ducking_times=@round.class.where("point<?",-1).count
+        total_rounds=@round.class.count
+        total_winning_point=@round.class.where("point>?",1).sum("point")
+        total_ducking_point=@round.class.where("point<?",-1).sum("point")
+        melding_times=@round.class.where("meld==?",1).count
+        riichi_times=@round.class.where("riichi==?",1).count
+        meld_and_win_times=@round.class.where("meld==1 and point>1").count
+        riichi_and_win_times=@round.class.where("riichi==1 and point>1").count
+        meld_and_duck_times=@round.class.where("meld==1 and point<-1").count
+        riichi_and_duck_times=@round.class.where("riichi==1 and point<-1").count
+        ranks=@round.class.where("rank>1")
+        total_hanchan=ranks.count
+        sum_rank=ranks.sum("rank")
+        total_1_times=ranks.where("rank==1").count
+        total_2_times=ranks.where("rank==2").count
+        total_3_times=ranks.where("rank==3").count
+        total_4_times=ranks.where("rank==4").count
 
         @winning_per=winning_times/total_rounds*100
         @ducking_per=ducking_times/total_rounds*100
-        @winning_points_av=total_winning_point/winning_times
-        @ducking_points_av=total_ducking_point/ducking_times
+        @winning_points_av=total_winning_point/winning_times rescue 0
+        @ducking_points_av=total_ducking_point/ducking_times rescue 0
         @riichi_per=riichi_times/total_rounds*100
         @meld_per=melding_times/total_rounds*100
-        @riichi_and_win__per=riichi_and_win_times/riichi_times*100
-        @riichi_and_duck_per=riichi_and_duck_times/riichi_times*100
-        @meld_and_win_per=meld_and_win_times/melding_times*100
-        @meld_and_duck_per=meld_and_duck_times/melding_times*100
-        @rank_av=
-        @rank_1
-        @rank_2
-        @rank_3
-        @rank_4
+        @riichi_and_win__per=riichi_and_win_times/riichi_times*100 rescue 0
+        @riichi_and_duck_per=riichi_and_duck_times/riichi_times*100 rescue 0
+        @meld_and_win_per=meld_and_win_times/melding_times*100 rescue 0
+        @meld_and_duck_per=meld_and_duck_times/melding_times*100 rescue 0
+        @rank_av=sum_rank/total_hanchan rescue 0
+        @rank_1=total_1_times/total_hanchan*100 rescue 0
+        @rank_2=total_2_times/total_hanchan*100 rescue 0
+        @rank_3=total_3_times/total_hanchan*100 rescue 0
+        @rank_4=total_4_times/total_hanchan*100 rescue 0
         @rank_1_2=@rank_1+@rank_2
 
     end
