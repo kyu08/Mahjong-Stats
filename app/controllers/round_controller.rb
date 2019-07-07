@@ -27,19 +27,19 @@ class RoundController < ApplicationController
     end
 
     def analysis
-        @round=Round.find_by(user_id: @current_user.id)
-        winning_times=@round.class.where("point>?",1).count
-        ducking_times=@round.class.where("point<?",-1).count
-        total_rounds=@round.class.count
-        total_winning_point=@round.class.where("point>?",1).sum("point")
-        total_ducking_point=@round.class.where("point<?",-1).sum("point")
-        melding_times=@round.class.where("meld=1").count
-        riichi_times=@round.class.where("riichi=1").count
-        meld_and_win_times=@round.class.where("meld=1 and point>1").count
-        riichi_and_win_times=@round.class.where("riichi=1 and point>1").count
-        meld_and_duck_times=@round.class.where("meld=1 and point<-1").count
-        riichi_and_duck_times=@round.class.where("riichi=1 and point<-1").count
-        ranks=@round.class.where("rank>1")
+        @round=Round.where(user_id: @current_user.id)
+        winning_times=@round.where("point>1").count
+        ducking_times=@round.where("point<-1").count
+        total_rounds=@round.count
+        total_winning_point=@round.where("point>1").sum("point")
+        total_ducking_point=@round.where("point<-1").sum("point")
+        melding_times=@round.where("meld=1").count
+        riichi_times=@round.where("riichi=1").count
+        meld_and_win_times=@round.where("meld=1 and point>1").count
+        riichi_and_win_times=@round.where("riichi=1 and point>1").count
+        meld_and_duck_times=@round.where("meld=1 and point<-1").count
+        riichi_and_duck_times=@round.where("riichi=1 and point<-1").count
+        ranks=@round.where("rank>1")
         total_hanchan=ranks.count
         sum_rank=ranks.sum("rank")
         total_1_times=ranks.where("rank=1").count
