@@ -33,19 +33,19 @@ class RoundController < ApplicationController
         total_rounds=@round.class.count
         total_winning_point=@round.class.where("point>?",1).sum("point")
         total_ducking_point=@round.class.where("point<?",-1).sum("point")
-        melding_times=@round.class.where("meld==?",1).count
-        riichi_times=@round.class.where("riichi==?",1).count
-        meld_and_win_times=@round.class.where("meld==1 and point>1").count
-        riichi_and_win_times=@round.class.where("riichi==1 and point>1").count
-        meld_and_duck_times=@round.class.where("meld==1 and point<-1").count
-        riichi_and_duck_times=@round.class.where("riichi==1 and point<-1").count
+        melding_times=@round.class.where("meld=1").count
+        riichi_times=@round.class.where("riichi=1").count
+        meld_and_win_times=@round.class.where("meld=1 and point>1").count
+        riichi_and_win_times=@round.class.where("riichi=1 and point>1").count
+        meld_and_duck_times=@round.class.where("meld=1 and point<-1").count
+        riichi_and_duck_times=@round.class.where("riichi=1 and point<-1").count
         ranks=@round.class.where("rank>1")
         total_hanchan=ranks.count
         sum_rank=ranks.sum("rank")
-        total_1_times=ranks.where("rank==1").count
-        total_2_times=ranks.where("rank==2").count
-        total_3_times=ranks.where("rank==3").count
-        total_4_times=ranks.where("rank==4").count
+        total_1_times=ranks.where("rank=1").count
+        total_2_times=ranks.where("rank=2").count
+        total_3_times=ranks.where("rank=3").count
+        total_4_times=ranks.where("rank=4").count
 
         @winning_per=winning_times/total_rounds*100
         @ducking_per=ducking_times/total_rounds*100
