@@ -47,12 +47,12 @@ class RoundController < ApplicationController
         total_3_times=ranks.where("rank=3").count
         total_4_times=ranks.where("rank=4").count
 
-        @winning_per=winning_times/total_rounds*100
-        @ducking_per=ducking_times/total_rounds*100
+        @winning_per=winning_times/total_rounds*100 rescue 0
+        @ducking_per=ducking_times/total_rounds*100 rescue 0
         @winning_points_av=total_winning_point/winning_times rescue 0
         @ducking_points_av=total_ducking_point/ducking_times rescue 0
-        @riichi_per=riichi_times/total_rounds*100
-        @meld_per=melding_times/total_rounds*100
+        @riichi_per=riichi_times/total_rounds*100 rescue 0
+        @meld_per=melding_times/total_rounds*100 rescue 0
         @riichi_and_win__per=riichi_and_win_times/riichi_times*100 rescue 0
         @riichi_and_duck_per=riichi_and_duck_times/riichi_times*100 rescue 0
         @meld_and_win_per=meld_and_win_times/melding_times*100 rescue 0
