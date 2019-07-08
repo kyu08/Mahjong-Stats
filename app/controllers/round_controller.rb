@@ -46,8 +46,12 @@ class RoundController < ApplicationController
         total_2_times=ranks.where("rank=2").count
         total_3_times=ranks.where("rank=3").count
         total_4_times=ranks.where("rank=4").count
-
-        @winning_per=winning_times/total_rounds*100 rescue 0
+        
+        if total_rounds == 0
+            @winning_per = 0
+        else    
+            @winning_per=winning_times/total_rounds*100 
+        end
         @ducking_per=ducking_times/total_rounds*100 rescue 0
         @winning_points_av=total_winning_point/winning_times rescue 0
         @ducking_points_av=total_ducking_point/ducking_times rescue 0
