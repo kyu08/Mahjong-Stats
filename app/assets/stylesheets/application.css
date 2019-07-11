@@ -5,7 +5,6 @@
         float: right;
         font-size: 25px;
         padding: 21px 0;
-        /* displayをnoneに指定してください */
         display:none;
       }
     .header-logo {
@@ -17,7 +16,7 @@
         }
 }
 
-/* reset ================================ */
+/* reset */
 * {
     box-sizing: border-box;
     }
@@ -54,7 +53,7 @@
     cursor: pointer;
     }
     
-    /* 共通レイアウト ================================ */
+    /* 共通レイアウト */
     body {
     color: #2d3133;
     background-color: #ffffff;
@@ -79,7 +78,7 @@
     clear: both;
     }
     
-    /* ヘッダー ================================ */
+    /* ヘッダー */
     header {
     height: 64px;
     position: absolute;
@@ -140,62 +139,8 @@
         font-size: 25px;
         display:block;
       }
-    
-    /* top ================================ */
-    .top-main {
-    padding: 200px 0 100px;
-    text-align: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: auto;
-    min-height: 100%;
-    color: black;
-    background-color: #ffffff;
-    background-repeat: no-repeat;
-    background-position: center 50%;
-    background-size: cover;
-    background-image: url("/top.jpg");
-    }
-    
-    .top-message {
-    position: relative;
-    }
-    
-    .top-main h2 {
-    font-size: 70px;
-    font-weight: 500;
-    line-height: 1.3;
-    -webkit-font-smoothing: antialiased;
-    margin-bottom: 20px;
-    }
-    
-    .top-main p {
-    font-size: 24px;
-    }
-    
-    /* about ================================ */
-    .about-main {
-    padding: 180px 8% 0;
-    color: white;
-    }
-    
-    .about-main h2 {
-    font-size: 64px;
-    font-weight: 500;
-    line-height: 1.4;
-    }
-    
-    .about-main p {
-    font-weight: 200;
-    font-size: 20px;
-    }
-    
-    .about-img {
-    width: 84%;
-    }
-    
-    /* フォーム================================ */
+      
+    /* フォーム */
     .form {
     max-width: 600px;
     margin: 0 auto;
@@ -253,7 +198,7 @@
     clear: both;
     }
     
-    /* フラッシュ ================================ */
+    
     .flash {
     padding: 10px 0;
     color: white;
@@ -267,7 +212,7 @@
     font-size: 14px;
     }
     
-    /* date/input ================================ */
+    /* date/input */
     .point-input {
     display: inline-block;
     }
@@ -278,21 +223,3 @@
       text-decoration: underline;
       font-weight: bold;
     }
-
-
-
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
