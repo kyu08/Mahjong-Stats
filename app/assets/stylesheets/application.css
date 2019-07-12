@@ -120,11 +120,11 @@
     .header-menus {
     float: white;
     padding-right: 20px;
-
+    float: right;
     }
     
     .header-menus li {
-    float: right;
+    float: left;
     line-height: 64px;
     font-size: 13px;
     color: white;
