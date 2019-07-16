@@ -34,6 +34,7 @@
     form input[type="submit"] {
     border: none;
     cursor: pointer;
+    margin-right: 30px;
     }
     
     /* 共通レイアウト */
@@ -237,7 +238,7 @@
       text-align: center;
       color: white;
       /*width: 33%;*/
-      padding: 10px 6%;
+      padding: 10px 4.5%;
       cursor: pointer;
     }
     .point-input:checked + label{
@@ -295,7 +296,8 @@
     .form-body {
       width: 100%;
       margin: 0%;
-      
+      padding-left: 0px; 
+      padding-right: 0px;      
     }
     .main{
       width: 100%;
