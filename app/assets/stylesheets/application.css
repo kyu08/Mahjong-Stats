@@ -139,6 +139,10 @@
         font-size: 25px;
         display:block;
       }
+
+    #nav-drawer{
+      display: none;
+    }
       
     /* home */
 
@@ -241,6 +245,7 @@
       padding: 10px 4.5%;
       cursor: pointer;
     }
+
     .point-input:checked + label{
       background-color: #2e4600;
     }
@@ -316,5 +321,85 @@
     .radioes {
       width: 100%;
     }
+    /* ハンバーガーーーーーーー */
+    #nav-drawer {
+      float: right;
+      display: inline;
+      position: relative;
+    }
     
+    .nav-unshown {
+      display:none;
+    }
+    
+    
+    #nav-open {
+      display: inline-block;
+      width: 30px;
+      height: 22px;
+      vertical-align: middle;
+    }
+    
+    
+    #nav-open span, #nav-open span:before, #nav-open span:after {
+      position: absolute;
+      height: 3px;
+      width: 28px;
+      border-radius: 3px;
+      background: #555;
+      display: block;
+      content: '';
+      cursor: pointer;
+    }
+    #nav-open{
+      margin-top: 10px;
+      padding-top: 2px ;
+      width: 45px;
+    }
+    #nav-open span:before {
+      bottom: -8px;
+    }
+    #nav-open span:after {
+      bottom: -16px;
+    }
+    
+    #nav-close {
+      display: none;
+      position: fixed;
+      z-index: 99;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: black;
+      opacity: 0;
+      transition: .3s ease-in-out;
+    }
+    
+    /*中身*/
+    #nav-content {
+      overflow: auto;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 75%;
+      max-width: 330px;
+      height: 100%;
+      background: #fff;
+      transition: .3s ease-in-out;
+      -webkit-transform: translateX(-105%);
+      transform: translateX(-105%);
+    }
+    
+    #nav-input:checked ~ #nav-close {
+      display: block;
+      opacity: .5;
+    }
+    
+    #nav-input:checked ~ #nav-content {
+      -webkit-transform: translateX(0%);
+      transform: translateX(0%);
+      box-shadow: 6px 0 25px rgba(0,0,0,.15);
+    }
 }

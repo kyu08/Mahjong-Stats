@@ -15,31 +15,62 @@
                 <%= link_to("Mahjong Stats","/")%>
             </div>
             <ul class="header-menus">
-            <% if @current_user %>
-                <li>
-                <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
-                </li>            
-                <li>
-                <%= link_to("成績入力","/date/input")%>
-                </li>
-                <li>
-                <%= link_to("成績分析","/date/analysis")%>
-                </li>
-                <li>
-                <%= link_to("ログアウト","/logout")%>
-                </li>
-            <% else %>
-                <li>
-                <%= link_to("Mahjong Statsとは","")%>
-                </li>
-                <li>
-                <%= link_to("新規登録","/signup")%>
-                </li>
-                <li>
-                <%= link_to("ログイン","/login")%>
-                </li>                
-            <%  end %>
+                <% if @current_user %>
+                    <li>
+                    <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
+                    </li>            
+                    <li>
+                    <%= link_to("成績入力","/date/input")%>
+                    </li>
+                    <li>
+                    <%= link_to("成績分析","/date/analysis")%>
+                    </li>
+                    <li>
+                    <%= link_to("ログアウト","/logout")%>
+                    </li>
+                <% else %>
+                    <li>
+                    <%= link_to("Mahjong Statsとは","")%>
+                    </li>
+                    <li>
+                    <%= link_to("新規登録","/signup")%>
+                    </li>
+                    <li>
+                    <%= link_to("ログイン","/login")%>
+                    </li>                
+                <%  end %>
             </ul>
+            <div id="nav-drawer">
+                <input id="nav-input" type="checkbox" class="nav-unshown">
+                <label id="nav-open" for="nav-input"><span></span></label>
+                <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                <div id="nav-content">
+                    <% if @current_user %>
+                        <li>
+                        <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
+                        </li>            
+                        <li>
+                        <%= link_to("成績入力","/date/input")%>
+                        </li>
+                        <li>
+                        <%= link_to("成績分析","/date/analysis")%>
+                        </li>
+                        <li>
+                        <%= link_to("ログアウト","/logout")%>
+                        </li>
+                    <% else %>
+                        <li>
+                        <%= link_to("Mahjong Statsとは","")%>
+                        </li>
+                        <li>
+                        <%= link_to("新規登録","/signup")%>
+                        </li>
+                        <li>
+                        <%= link_to("ログイン","/login")%>
+                        </li>                
+                    <%  end %>
+                </div>
+            </div>
         </header>
 
         <% if flash[:notice] %>
