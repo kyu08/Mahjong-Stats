@@ -350,11 +350,14 @@
       display: block;
       content: '';
       cursor: pointer;
+
     }
     #nav-open{
       margin-top: 10px;
-      padding-top: 2px ;
+      padding: 20px 20px;
+/*      padding-top: 2px;*/
       width: 45px;
+/*      background-color: #2a4600;  のちほどコメントアウト*/  
     }
     #nav-open span:before {
       bottom: -8px;

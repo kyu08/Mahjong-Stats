@@ -42,7 +42,7 @@ class RoundController < ApplicationController
 
         @round=Round.new(user_id: @current_user.id,point: @point,meld: @meld,riichi: @riichi,rank: @rank)
         @round.save
-        redirect_to("/date/analysis")
+        redirect_to("/date/input")
     end
 
     def analysis
