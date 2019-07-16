@@ -4,7 +4,7 @@ class RoundController < ApplicationController
 
     end
     def create
-        @point=params[:point_number].to_i
+        params[:point_number] ==nil ? @point=0 : @point=params[:point_number].to_i
         if params[:point]== "0"
             @point=0
         elsif params[:point] == "2"
