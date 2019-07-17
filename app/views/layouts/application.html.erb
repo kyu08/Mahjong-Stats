@@ -30,7 +30,7 @@
                     </li>
                 <% else %>
                     <li>
-                    <%= link_to("Mahjong Statsとは","")%>
+                    <%= link_to("Mahjong Statsとは","/about")%>
                     </li>
                     <li>
                     <%= link_to("新規登録","/signup")%>
@@ -46,26 +46,26 @@
                 <label class="nav-unshown" id="nav-close" for="nav-input"></label>
                 <div id="nav-content">
                     <% if @current_user %>
-                        <li>
+                        <li class="nav-link">
                         <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
                         </li>            
-                        <li>
+                        <li class="nav-link">
                         <%= link_to("成績入力","/date/input")%>
                         </li>
-                        <li>
+                        <li class="nav-link">
                         <%= link_to("成績分析","/date/analysis")%>
                         </li>
-                        <li>
+                        <li class="nav-link">
                         <%= link_to("ログアウト","/logout")%>
                         </li>
                     <% else %>
-                        <li>
-                        <%= link_to("Mahjong Statsとは","")%>
+                        <li class="nav-link">
+                        <%= link_to("Mahjong Statsとは","/about")%>
                         </li>
-                        <li>
+                        <li class="nav-link">
                         <%= link_to("新規登録","/signup")%>
                         </li>
-                        <li>
+                        <li class="nav-link">
                         <%= link_to("ログイン","/login")%>
                         </li>                
                     <%  end %>

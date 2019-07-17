@@ -352,11 +352,11 @@
 
     }
     #nav-open{
-      margin-top: 10px;
+      margin-top: 15px;
+      margin-right: 10px;
       padding: 20px 20px;
-/*      padding-top: 2px;*/
       width: 45px;
-/*      background-color: #2a4600;  のちほどコメントアウト*/  
+      background-color: #2a4600;
     }
     #nav-open span:before {
       bottom: -8px;
@@ -388,10 +388,17 @@
       width: 75%;
       max-width: 330px;
       height: 100%;
-      background: #fff;
+      background: #2e4600;
       transition: .3s ease-in-out;
       -webkit-transform: translateX(-105%);
       transform: translateX(-105%);
+      padding: 0 auto;
+      text-align: center;
+    }
+    #nav-content a{
+      color:white;
+      display: block;
+      padding: 10px 10px;
     }
     
     #nav-input:checked ~ #nav-close {
@@ -403,5 +410,10 @@
       -webkit-transform: translateX(0%);
       transform: translateX(0%);
       box-shadow: 6px 0 25px rgba(0,0,0,.15);
+    }
+    .nav-link{
+      border-bottom: solid 2px white;
+      padding: 20px 0;
+      font-size:25px;
     }
 }
