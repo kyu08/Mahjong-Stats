@@ -23,26 +23,12 @@ class RoundController < ApplicationController
             @riichi=1
         end
 
-=begin
-        @meld=0.to_i
-        @riichi=0.to_i
-        if params[:action] == "0"
-            @meld=0
-            @riichi=0
-        elsif params[:action] == "1"
-            @meld=1
-            @riichi=0
-        elsif params[:action] == "2"
-            @meld=0
-            @riichi=1
-        end
-=end
-
         @rank=params[:rank]
 
         @round=Round.new(user_id: @current_user.id,point: @point,meld: @meld,riichi: @riichi,rank: @rank)
         @round.save
         redirect_to("/date/input")
+        flash[:notice] = "局データを登録しました！"
     end
 
     def analysis
