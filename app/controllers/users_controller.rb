@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
   def create
       @user = User.new(name: params[:name], email: params[:email], password: params[:password])
       if @user.save
@@ -16,6 +17,7 @@ class UsersController < ApplicationController
         render("users/new")
       end
   end
+
   def login
       @user = User.find_by(email: params[:email],password: params[:password])
       if @user
@@ -29,17 +31,21 @@ class UsersController < ApplicationController
         render("/users/login_form")
       end
   end
+
   def logout
     session[:user_id] = nil
     redirect_to("/login")
     flash[:notice] = "ログアウトしました"
   end
+
   def show
     @user = User.find_by(id: params[:id])
   end
+
   def edit
     @user = User.find_by(id: params[:id])
   end
+
   def update
     @user = User.find_by(id: params[:id])
     @user.name = params[:name]
@@ -51,4 +57,5 @@ class UsersController < ApplicationController
       render("/users/edit")
     end
   end
+  
 end
