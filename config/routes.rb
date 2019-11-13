@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
     get "login" => "users#login_form"
     post "login" => "users#login"
     get "logout" => "users#logout"
@@ -12,11 +11,7 @@ Rails.application.routes.draw do
     get "date/input" => "round#input"
     post "date/create" => "round#create"
     get "date/analysis" => "round#analysis"
-
     
     get "/" => "home#top"
     get "about" => "home#about"
 end
-
-
-    # For details on the DSL available within this file, see #http://guides.rubyonrails.org/routing.html

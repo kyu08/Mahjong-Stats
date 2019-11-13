@@ -3,47 +3,45 @@
     <div class="form input-form">
       <div class="form-body">
         <%= form_tag("/date/create", method: :post) do %>
-
-            <div class="radio-wrapper">
-                <p class="input-title">点数増減</p>
-                <div class="radioes">
-                    <input type="radio" name="point" class="point-input" id="point-01" value="0" checked="checked">
-                    <label for="point-01">増減なし／被ツモ</label>
-                    <input type="radio" name="point" class="point-input" id="point-02" value="1">
-                    <label for="point-02">和了</label>
-                    <input type="radio" name="point" class="point-input" id="point-03" value="2">
-                    <label for="point-03">放銃</label>
-                </div>
-                
-                <p class="point_number">和了点数/放銃点数(正の値で記入してください)</p>
-                <input name="point_number" type="text" pattern="[0-9]*">
+          <div class="radio-wrapper">
+            <p class="input-title">点数増減</p>
+            <div class="radioes">
+                <input type="radio" name="point" class="point-input" id="point-01" value="0" checked="checked">
+                <label for="point-01">増減なし／被ツモ</label>
+                <input type="radio" name="point" class="point-input" id="point-02" value="1">
+                <label for="point-02">和了</label>
+                <input type="radio" name="point" class="point-input" id="point-03" value="2">
+                <label for="point-03">放銃</label>
             </div>
-            <div class="radio-wrapper">
-                <p class="input-title">副露・立直有無</p>
-                <div class="radioes">
-                  <input type="radio" name="doing" class="doing-input" id="doing-01" value="0" checked="checked">
-                  <label for="doing-01">副露,立直なし</label>
-                  <input type="radio" name="doing" class="doing-input" id="doing-02" value="1">
-                  <label for="doing-02">副露した</label>
-                  <input type="radio" name="doing" class="doing-input" id="doing-03" value="2">
-                  <label for="doing-03">立直した</label>
-                </div>
+            <p class="point_number">和了点数/放銃点数(正の値で記入してください)</p>
+            <input name="point_number" type="text" pattern="[0-9]*">
+          </div>
+          <div class="radio-wrapper">
+            <p class="input-title">副露・立直有無</p>
+            <div class="radioes">
+              <input type="radio" name="doing" class="doing-input" id="doing-01" value="0" checked="checked">
+              <label for="doing-01">副露,立直なし</label>
+              <input type="radio" name="doing" class="doing-input" id="doing-02" value="1">
+              <label for="doing-02">副露した</label>
+              <input type="radio" name="doing" class="doing-input" id="doing-03" value="2">
+              <label for="doing-03">立直した</label>
             </div>
-            <div class="radio-wrapper">
-                <p class="input-title">順位(半荘終了時のみ1位〜4位を選択)</p>
-                <div class="radioes">
-                　<input type="radio" name="rank" class="rank-input" id="rank-00" value="0" checked="checked">
-                  <label for="rank-00">局終了</label>                
-                  <input type="radio" name="rank" class="rank-input" id="rank-01" value="1">
-                  <label for="rank-01">1位</label>
-                  <input type="radio" name="rank" class="rank-input" id="rank-02" value="2">
-                  <label for="rank-02">2位</label>
-                  <input type="radio" name="rank" class="rank-input" id="rank-03" value="3">
-                  <label for="rank-03">3位</label>
-                  <input type="radio" name="rank" class="rank-input" id="rank-04" value="4">
-                  <label for="rank-04">4位</label>
-                </div>
+          </div>
+          <div class="radio-wrapper">
+            <p class="input-title">順位(半荘終了時のみ1位〜4位を選択)</p>
+            <div class="radioes">
+            　<input type="radio" name="rank" class="rank-input" id="rank-00" value="0" checked="checked">
+              <label for="rank-00">局終了</label>                
+              <input type="radio" name="rank" class="rank-input" id="rank-01" value="1">
+              <label for="rank-01">1位</label>
+              <input type="radio" name="rank" class="rank-input" id="rank-02" value="2">
+              <label for="rank-02">2位</label>
+              <input type="radio" name="rank" class="rank-input" id="rank-03" value="3">
+              <label for="rank-03">3位</label>
+              <input type="radio" name="rank" class="rank-input" id="rank-04" value="4">
+              <label for="rank-04">4位</label>
             </div>
+          </div>
           <input type="submit" value="送信">
         <% end %>
       </div>

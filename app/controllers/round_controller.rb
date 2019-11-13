@@ -1,8 +1,8 @@
 class RoundController < ApplicationController
     before_action :authenticate_user,{only: [:input,:create]}
     def input
-
     end
+
     def create
         params[:point_number] ==nil ? @point=0 : @point=params[:point_number].to_i
         if params[:point]== "0"
@@ -24,7 +24,6 @@ class RoundController < ApplicationController
         end
 
         @rank=params[:rank]
-
         @round=Round.new(user_id: @current_user.id,point: @point,meld: @meld,riichi: @riichi,rank: @rank)
         @round.save
         redirect_to("/date/input")
@@ -35,7 +34,7 @@ class RoundController < ApplicationController
         @round=Round.where(user_id: @current_user.id)
         @winning_times=@round.where("point>0").count
         @ducking_times=@round.where("point<0").count
-        @total_rounds=@round.count                                       #この辺もうちょいシンプルに書こう...
+        @total_rounds=@round.count
         @total_winning_point=@round.where("point>0").sum("point")
         @total_ducking_point=@round.where("point<0").sum("point").abs
         @melding_times=@round.where("meld=1").count
@@ -69,7 +68,5 @@ class RoundController < ApplicationController
         @total_hanchan == 0 ? @rank_3 = 0 : @rank_3=(@total_3_times.to_f/@total_hanchan*100).round(1)
         @total_hanchan == 0 ? @rank_4 = 0 : @rank_4=(@total_4_times.to_f/@total_hanchan*100).round(1)
         @rank_1_2=(@rank_1 + @rank_2).round(1)
-
     end
-
 end

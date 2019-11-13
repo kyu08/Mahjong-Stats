@@ -57,5 +57,4 @@ class UsersController < ApplicationController
       render("/users/edit")
     end
   end
-  
 end

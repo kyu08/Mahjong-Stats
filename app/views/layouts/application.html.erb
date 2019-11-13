@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Mahjong Stats</title>
-    <%= csrf_meta_tags %>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <%= favicon_link_tag('favicon.ico') %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <title>Mahjong Stats</title>
+        <%= csrf_meta_tags %>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <%= favicon_link_tag("favicon.ico") %>
+        <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+        <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
     </head>
 
     <body>
@@ -18,26 +18,26 @@
             <ul class="header-menus">
                 <% if @current_user %>
                     <li>
-                    <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
+                        <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
                     </li>            
                     <li>
-                    <%= link_to("成績入力","/date/input")%>
+                        <%= link_to("成績入力","/date/input")%>
                     </li>
                     <li>
-                    <%= link_to("成績分析","/date/analysis")%>
+                        <%= link_to("成績分析","/date/analysis")%>
                     </li>
                     <li>
-                    <%= link_to("ログアウト","/logout")%>
+                        <%= link_to("ログアウト","/logout")%>
                     </li>
                 <% else %>
                     <li>
-                    <%= link_to("Mahjong Statsとは","/about")%>
+                        <%= link_to("Mahjong Statsとは","/about")%>
                     </li>
                     <li>
-                    <%= link_to("新規登録","/signup")%>
+                        <%= link_to("新規登録","/signup")%>
                     </li>
                     <li>
-                    <%= link_to("ログイン","/login")%>
+                        <%= link_to("ログイン","/login")%>
                     </li>                
                 <% end %>
             </ul>
@@ -48,38 +48,36 @@
                 <div id="nav-content">
                     <% if @current_user %>
                         <li class="nav-link">
-                        <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
+                            <%= link_to(@current_user.name + "さん","/users/#{@current_user.id}")%>
                         </li>            
                         <li class="nav-link">
-                        <%= link_to("成績入力","/date/input")%>
+                            <%= link_to("成績入力","/date/input")%>
                         </li>
                         <li class="nav-link">
-                        <%= link_to("成績分析","/date/analysis")%>
+                            <%= link_to("成績分析","/date/analysis")%>
                         </li>
                         <li class="nav-link">
-                        <%= link_to("ログアウト","/logout")%>
+                            <%= link_to("ログアウト","/logout")%>
                         </li>
                     <% else %>
                         <li class="nav-link">
-                        <%= link_to("Mahjong Statsとは","/about")%>
+                            <%= link_to("Mahjong Statsとは","/about")%>
                         </li>
                         <li class="nav-link">
-                        <%= link_to("新規登録","/signup")%>
+                            <%= link_to("新規登録","/signup")%>
                         </li>
                         <li class="nav-link">
-                        <%= link_to("ログイン","/login")%>
+                            <%= link_to("ログイン","/login")%>
                         </li>                
                     <% end %>
                 </div>
             </div>
         </header>
-
         <% if flash[:notice] %>
-        <div class="flash time-limit">
-        <%= flash[:notice] %>
-        </div>
+            <div class="flash time-limit">
+                <%= flash[:notice] %>
+            </div>
         <% end %>
-
         <%= yield %>
     </body>
 </html>

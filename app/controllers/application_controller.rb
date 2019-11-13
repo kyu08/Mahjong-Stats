@@ -10,12 +10,14 @@ class ApplicationController < ActionController::Base
             redirect_to("/login")
         end
     end
+
     def forbid_login_user
         if @current_user
             flash[:notice] = "すでにログインしています"
             redirect_to("/")
         end
     end
+    
     def ensure_correct_user
         if @current_user.id != params[:id].to_i
             flash[:notice] = "権限がありません"
