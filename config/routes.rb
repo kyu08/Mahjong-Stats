@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     get "date/input" => "round#input"
     post "date/create" => "round#create"
     get "date/analysis" => "round#analysis"
-    
     get "/" => "home#top"
     get "about" => "home#about"
 end
