@@ -45,7 +45,7 @@ class RoundController < ApplicationController
         @meld_and_duck_times = @round.where("meld = 1 and point < 0").count
         @riichi_and_duck_times = @round.where("riichi = 1 and point < 0").count
         
-        binding.pry
+        # binding.pry
 
         @ranks = @round.where("rank >= 1")
         @total_hanchan = @ranks.count
